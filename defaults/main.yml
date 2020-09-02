@@ -1,0 +1,9 @@
+---
+default_user: 'ubuntu'
+#HOSTNAME: "cw-agent"
+METRICS_NAMESPACE: "cw-agent"
+METRICS_INTERVAL: 300
+LOGS_GROUP_NAME: "cw-agent"
+LOGS_SERVERLOG_FILE: "syslog"
+DOCKER_LOG_DRIVER: "json-file"
+DOCKER_LOG_OPTIONS: "{}"

@@ -1,0 +1,30 @@
+---
+- name: Create Cloudwatch directory
+  file:
+    path: /home/{{default_user}}/cloudwatch/
+    state: directory  
+
+- name: Cloudwatch config file
+  template:
+    src: default_linux_config.json.j2
+    dest: /home/{{default_user}}/cloudwatch/default_linux_config.json   
+
+- name: CW-Agent
+  docker_container:
+    name: "cw-agent"
+    #hostname: "{{HOSTNAME}}"
+    image: "amazon/cloudwatch-agent:latest"
+    pull: "true"
+    #env: 
+    network_mode: host 
+    recreate: "yes"
+    state: "started"
+    log_driver: "{{DOCKER_LOG_DRIVER}}"
+    log_options: "{{DOCKER_LOG_OPTIONS}}"
+    #memory: 768m
+    restart_policy: "unless-stopped"
+    #published_ports:
+    #  - "0.0.0.0:9200:9200"
+    volumes:
+      - /home/{{default_user}}/cloudwatch/default_linux_config.json:/opt/aws/amazon-cloudwatch-agent/bin/default_linux_config.json
+      - /var/log/:/host-varlog/

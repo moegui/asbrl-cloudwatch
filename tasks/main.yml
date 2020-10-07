@@ -18,6 +18,7 @@
     #env: 
     network_mode: host 
     cpu_period: "{{DOCKER_CPU_PERIOD}}"
+    cpu_quota: "{{DOCKER_CPU_QUOTA}}"
     memory: "{{DOCKER_MEMORY}}"
     recreate: "yes"
     state: "started"

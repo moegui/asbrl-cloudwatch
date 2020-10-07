@@ -13,7 +13,7 @@
   docker_container:
     name: "{{CONTAINER_NAME}}"
     #hostname: "{{HOSTNAME}}"
-    image: "amazon/cloudwatch-agent:{{BUILD}}"
+    image: "amazon/cloudwatch-agent:latest"
     pull: "true"
     #env: 
     network_mode: host 

@@ -23,6 +23,7 @@ Role Variables
 - DOCKER_MEMORY: 0
 - DOCKER_LABELS:
     tag1: test
+- ADVANCED_METRICS: false
 
 Dependencies
 ------------

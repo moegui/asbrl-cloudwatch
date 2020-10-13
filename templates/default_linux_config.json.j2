@@ -26,6 +26,13 @@
         "measurement": [
           "read_bytes",
           "write_bytes"
+{% if ADVANCED_METRICS %}
+          ,"reads",
+          "writes",
+          "read_time",
+          "write_time",
+          "iops_in_progress"
+{% endif %}
         ],
         "metrics_collection_interval": {{ METRICS_INTERVAL }}
       },
@@ -42,6 +49,11 @@
         "measurement": [
           "bytes_recv",
           "bytes_sent"
+{% if ADVANCED_METRICS %}
+          ,
+          "packets_sent",
+          "packets_recv"
+{% endif %}
         ],
         "metrics_collection_interval": {{ METRICS_INTERVAL }}
       }

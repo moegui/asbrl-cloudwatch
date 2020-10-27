@@ -1,4 +1,7 @@
 parseable: true
-quiet: true
 use_default_rules: true
 verbosity: 1
+skip_list:
+ - '106'
+ - '701'
+ - '703'

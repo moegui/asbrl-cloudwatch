@@ -16,8 +16,7 @@
     name: "{{ CONTAINER_NAME }}"
     #hostname: "{{HOSTNAME}}"
     image: "amazon/cloudwatch-agent:latest"
-    pull: "true"
-    #env: 
+    pull: "{{ DOCKER_PULL }}"
     network_mode: host
     cpu_period: "{{ DOCKER_CPU_PERIOD }}"
     cpu_quota: "{{ DOCKER_CPU_QUOTA }}"
